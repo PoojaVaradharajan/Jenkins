@@ -1,0 +1,241 @@
+ Hello World Program
+This is the simplest Java program, which prints "Hello, World!" to the console.
+
+java
+Copy code
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+2. Basic Arithmetic Operations
+This program performs addition, subtraction, multiplication, and division on two numbers.
+
+java
+Copy code
+import java.util.Scanner;
+
+public class ArithmeticOperations {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+
+        System.out.println("Addition: " + (num1 + num2));
+        System.out.println("Subtraction: " + (num1 - num2));
+        System.out.println("Multiplication: " + (num1 * num2));
+        System.out.println("Division: " + (num1 / num2));
+
+        scanner.close();
+    }
+}
+3. Check Even or Odd Number
+This program checks if a number entered by the user is even or odd.
+
+java
+Copy code
+import java.util.Scanner;
+
+public class EvenOrOdd {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+
+        if (num % 2 == 0) {
+            System.out.println(num + " is even.");
+        } else {
+            System.out.println(num + " is odd.");
+        }
+
+        scanner.close();
+    }
+}
+4. Find the Largest of Three Numbers
+This program finds the largest number among three numbers.
+
+java
+Copy code
+import java.util.Scanner;
+
+public class LargestOfThree {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+
+        System.out.print("Enter third number: ");
+        int num3 = scanner.nextInt();
+
+        int largest = num1;
+
+        if (num2 > largest) {
+            largest = num2;
+        }
+        if (num3 > largest) {
+            largest = num3;
+        }
+
+        System.out.println("The largest number is: " + largest);
+
+        scanner.close();
+    }
+}
+5. Factorial of a Number
+This program calculates the factorial of a given number.
+
+java
+Copy code
+import java.util.Scanner;
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+
+        int factorial = 1;
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+
+        System.out.println("Factorial of " + num + " is " + factorial);
+
+        scanner.close();
+    }
+}
+6. Fibonacci Series
+This program generates the Fibonacci series up to a certain number of terms.
+
+java
+Copy code
+import java.util.Scanner;
+
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter number of terms: ");
+        int n = scanner.nextInt();
+
+        int a = 0, b = 1, sum;
+        System.out.print("Fibonacci Series: " + a + " " + b);
+
+        for (int i = 3; i <= n; i++) {
+            sum = a + b;
+            System.out.print(" " + sum);
+            a = b;
+            b = sum;
+        }
+
+        scanner.close();
+    }
+}
+7. Check if a Number is Prime
+This program checks if a given number is prime.
+
+java
+Copy code
+import java.util.Scanner;
+
+public class PrimeCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+
+        boolean isPrime = true;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime && num > 1) {
+            System.out.println(num + " is a prime number.");
+        } else {
+            System.out.println(num + " is not a prime number.");
+        }
+
+        scanner.close();
+    }
+}
+8. Reverse a String
+This program reverses a string entered by the user.
+
+java
+Copy code
+import java.util.Scanner;
+
+public class ReverseString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = scanner.nextLine();
+
+        String reversed = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed += str.charAt(i);
+        }
+
+        System.out.println("Reversed String: " + reversed);
+
+        scanner.close();
+    }
+}
+9. Simple Calculator Using Switch Case
+This program performs basic arithmetic operations using a switch statement.
+
+java
+Copy code
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter second number: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.print("Choose an operation (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+
+        double result;
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                result = num1 / num2;
+                break;
+            default:
+                System.out.println("Invalid operator");
+                return;
+        }
+
+        System.out.println("Result: " + result);
+        scanner.close();
+    }
+}
